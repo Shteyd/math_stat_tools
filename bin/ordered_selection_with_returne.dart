@@ -1,19 +1,20 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
+
 import 'package:path/path.dart' as path;
 
 const List<int> store = [1, 2, 3, 4];
 
-void main(List<String> arguments) {
+Future<void> orderedSelection() async {
   const JsonEncoder encoder = JsonEncoder.withIndent('  ');
   final Map<String, int> map = _dataForJson;
 
-  writeFile(encoder.convert(map));
+  await writeFile(encoder.convert(map));
 }
 
 Future<String> get dirPath async {
-  final Directory dir = Directory('${path.current}\\data');
+  final Directory dir = Directory('${path.current}\\statistics');
 
   if (await dir.exists()) {
     return dir.path;
@@ -25,7 +26,7 @@ Future<String> get dirPath async {
 
 writeFile(String json) async {
   final localPath = await dirPath;
-  final file = File('$localPath\\data.json');
+  final file = File('$localPath\\ordered_selection_with_returne.json');
 
   if (await file.exists()) {
     file.delete(recursive: true);
@@ -51,7 +52,7 @@ Map<String, int> get _dataForJson {
   final Map<String, int> _map = _mapKeys;
   final Random random = Random();
 
-  for (int counter = 0; counter <= 6400; counter++) {
+  for (int counter = 0; counter < 6400; counter++) {
     // max length is 3
     final List<int> cells = [];
 
