@@ -10,7 +10,7 @@ Future<void> orderedSelectionWithoutReturn() async {
     jsonFilename: "ordered_selection_without_return",
     json: _dataForJson,
   );
-  _fileService.writeFile();
+  await _fileService.writeFile();
 }
 
 Map<String, int> get _mapKeys {

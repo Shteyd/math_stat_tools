@@ -12,7 +12,7 @@ Future<void> orderedSelectionWithReturn() async {
     jsonFilename: "ordered_selection_with_return",
     json: _dataForJson,
   );
-  _fileService.writeFile();
+  await _fileService.writeFile();
 }
 
 Map<String, int> get _mapKeys {

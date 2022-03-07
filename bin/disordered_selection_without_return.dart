@@ -14,7 +14,7 @@ Future<void> disorderedSelectionWithoutReturn() async {
     jsonFilename: "disordered_selection_without_return",
     json: _map,
   );
-  _fileService.writeFile();
+  await _fileService.writeFile();
 }
 
 String _getSortedKey(String key) {

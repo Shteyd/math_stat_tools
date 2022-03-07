@@ -39,5 +39,7 @@ class FileService {
       _file.create(recursive: true);
     }
     _file.writeAsString(_cleanJson);
+
+    return;
   }
 }
