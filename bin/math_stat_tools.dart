@@ -18,7 +18,7 @@ void main(List<String> arguments) async {
   );
   stdout.write(">>> ");
 
-  final String line = stdin.readLineSync()!;
+  final String line = stdin.readLineSync() ?? '';
   switch (line) {
     case "1":
       orderedSelectionWithReturn();
